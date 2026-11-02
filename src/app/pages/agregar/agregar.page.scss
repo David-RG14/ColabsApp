@@ -1,0 +1,20 @@
+.margen{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.avatar-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 20px auto;
+}
+.camera-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  --border-radius: 50%;
+}

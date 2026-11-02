@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-avatar class="avatar-container">
+    <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="Foto de perfil" />
+  </ion-avatar>
+  <div class="ion-text-center">
+    <ion-text class="nombre">Ana García</ion-text><br>
+    <ion-text color="medium">Desarrolladora</ion-text>
+  </div>
+  <br><br>
+
+  <div class="margen">
+
+    <h5><ion-icon name="mail" style="font-size: 20px; padding-right: 10px;">
+      </ion-icon>Correo:</h5>
+    <ion-text>ana@empresa.com</ion-text>
+    <h5><ion-icon name="call" style="font-size: 20px; padding-right: 10px;">
+      </ion-icon>Telefono:</h5>
+    <ion-text>+34 600 123 456</ion-text>
+    <h5><ion-icon name="briefcase" style="font-size: 20px; padding-right: 10px;">
+      </ion-icon>Puesto:</h5>
+    <ion-text>Desarrollo</ion-text>
+    <h5><ion-icon name="location" style="font-size: 20px; padding-right: 10px;">
+      </ion-icon>Departamento:</h5>
+    <ion-text>Madrid</ion-text>
+    <h5><ion-icon name="calendar" style="font-size: 20px; padding-right: 10px;">
+      </ion-icon>Fecha de ingreso:</h5>
+    <ion-text>12/03/2023</ion-text>
+
+    <br><br><br><br>
+
+    <div class="botones-container ion-text-center">
+      <ion-button fill="outline" color="dark" class="btn-accion" (click)="editarColab()">
+        <ion-icon style="padding-right: 10px;" name="pencil"></ion-icon>
+        Editar
+      </ion-button>
+      <ion-button style="margin-left: 30px;" fill="outline" color="danger" class="btn-accion" (click)="mostrarAlertaEliminar()">
+        <ion-icon style="padding-right: 10px;" name="trash"></ion-icon>
+        Eliminar
+      </ion-button>
+    </div>
+  </div>
+
+</ion-content>

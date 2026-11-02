@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Colaboradores
+    </ion-title>
+  </ion-toolbar>
+  <ion-searchbar placeholder="Buscar colaborador ..."></ion-searchbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  @if(colabexiste){
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="agregarColab()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list>
+    <ion-item button detail="true" (click)="detalleColab()">
+      <ion-avatar slot="start">
+        <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label>
+        <h2>Ana García</h2>
+        <p>Desarrolladora</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  }
+  @else {
+  <div class="ion-text-center centrarTodo">
+    <ion-icon name="people-sharp" color="medium" style="font-size: 160px;">
+    </ion-icon>
+    <h1>
+      <strong>Aún no hay colaboradores</strong>
+    </h1>
+    <p>
+      Comienza agregando tu primer <br> colaborador
+    </p>
+
+    <br><br><br>
+    <ion-button expand="block" vertical="end" style="text-transform: none;" (click)="agregarColab()">
+      Agregar colaborador
+    </ion-button>
+  </div>
+  }
+
+</ion-content>

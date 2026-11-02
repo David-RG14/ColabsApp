@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar colaborador</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="avatar-container">
+    <ion-avatar class="avatar-container">
+      <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="Foto de perfil" />
+    </ion-avatar>
+
+    <ion-button class="camera-btn" color="primary" shape="round">
+      <ion-icon name="camera-outline" slot="icon-only"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div class="margen">
+    <h5>Nombre</h5>
+    <ion-input fill="outline" placeholder="Nombre completo"></ion-input>
+
+    <h5>Correo electrónico</h5>
+    <ion-input fill="outline" placeholder="correo@empresa.com"></ion-input>
+
+    <h5>Teléfono</h5>
+    <ion-input fill="outline" placeholder="+34 600 123 456"></ion-input>
+
+    <h5>Puesto</h5>
+    <ion-select fill="outline" placeholder="Selecciona un puesto">
+      <ion-select-option value="puesto1">Gerente</ion-select-option>
+      <ion-select-option value="puesto2">Desarrollador</ion-select-option>
+      <ion-select-option value="puesto3">Diseñador</ion-select-option>
+    </ion-select>
+
+    <h5>Departamento</h5>
+    <ion-select fill="outline" placeholder="Selecciona un departamento">
+      <ion-select-option value="puesto1">D1</ion-select-option>
+      <ion-select-option value="puesto2">D3</ion-select-option>
+      <ion-select-option value="puesto3">D3</ion-select-option>
+    </ion-select>
+
+    <h5>Fecha de ingreso</h5>
+    <ion-input fill="outline" placeholder="dd/mm/aaaa"></ion-input>
+
+    <ion-button expand="block" mode="ios" color="primary" class="ion-margin-top ion-margin-bottom"
+      style="--border-radius: 12px; height: 50px; font-size: 1.1rem; text-transform: none; margin-top: 40px; --background: #3B82F6;">
+      Guardar
+    </ion-button>
+  </div>
+
+</ion-content>

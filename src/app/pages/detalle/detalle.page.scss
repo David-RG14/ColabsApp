@@ -1,0 +1,42 @@
+.avatar-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 20px auto;
+}
+
+.margen{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.nombre{
+    font-size: xx-large;
+}
+
+::ng-deep .custom-alert-delete {
+  
+  .alert-title {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .alert-message {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .btn-cancelar {
+    color: #000000;
+    background: #ffffffb0;
+    border-radius: 12px;
+    margin-right: 60px;
+  }
+
+  .btn-eliminar-rojo {
+    background-color: #d30004;
+    color: #ffffff;
+    border-radius: 12px;
+    margin-left: 20px;
+  }
+}
