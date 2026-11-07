@@ -14,17 +14,20 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  @for(colab of listaColabs; track colab){
   <ion-list>
     <ion-item button detail="true" (click)="detalleColab()">
       <ion-avatar slot="start">
         <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
       </ion-avatar>
       <ion-label>
-        <h2>Ana García</h2>
-        <p>Desarrolladora</p>
+        <h2>{{colab.strNombre}} {{colab.strApellido}}</h2>
+        <p>{{colab.strPuesto}}</p>
       </ion-label>
     </ion-item>
   </ion-list>
+  }
+
   }
   @else {
   <div class="ion-text-center centrarTodo">
