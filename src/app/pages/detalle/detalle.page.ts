@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonBackButton, IonButtons, IonAvatar, IonText, IonIcon, IonButton, AlertController } from '@ionic/angular';
 import { addIcons } from 'ionicons';
-import { mail,call,briefcase,location,calendar,trash,pencil } from 'ionicons/icons';
+import { mail, call, briefcase, location, calendar, trash, pencil } from 'ionicons/icons';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,11 +13,11 @@ import { Router } from '@angular/router';
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonBackButton, IonButtons, IonAvatar, IonText, IonIcon, IonButton]
 })
 export class DetallePage implements OnInit {
-private alertController = inject(AlertController);
-private router = inject(Router);
+  private alertController = inject(AlertController);
+  private router = inject(Router);
 
-  constructor() { 
-    addIcons({ mail,call,briefcase,location,calendar,trash,pencil});
+  constructor() {
+    addIcons({ mail, call, briefcase, location, calendar, trash, pencil });
   }
   async mostrarAlertaEliminar() {
     const alert = await this.alertController.create({
@@ -46,11 +46,13 @@ private router = inject(Router);
     await alert.present();
   }
 
-  editarColab(){
+  editarColab() {
     this.router.navigate(['/editar']);
   }
 
+  colab: any;
   ngOnInit() {
+    this.colab =history.state.colab    
   }
 
 }

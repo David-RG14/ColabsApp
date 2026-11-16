@@ -9,7 +9,7 @@
 
 <ion-content class="ion-padding">
 
-  <div class="avatar-container">
+  <!--<div class="avatar-container">
     <ion-avatar class="avatar-container">
       <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="Foto de perfil" />
     </ion-avatar>
@@ -50,6 +50,131 @@
       style="--border-radius: 12px; height: 50px; font-size: 1.1rem; text-transform: none; margin-top: 40px; --background: #3B82F6;">
       Guardar
     </ion-button>
-  </div>
+  </div>-->
 
+  <form
+    class="formulario"
+    novalidate
+    (submit)="guardar($event)"
+  >
+    <div class="foto">
+      <ion-icon
+        name="person-circle"
+        color="medium"
+        aria-hidden="true"
+      ></ion-icon>
+    </div>
+
+    <!-- Nombre -->
+    <ion-input
+      mode="md"
+      fill="outline"
+      type="text"
+      label="Nombre"
+      labelPlacement="stacked"
+      placeholder="Nombre del colaborador"
+      autocomplete="given-name"
+      [formField]="formulario.strNombre"
+      [class.ion-invalid]="formulario.strNombre().invalid()"
+      [class.ion-touched]="formulario.strNombre().touched()"
+      errorText="Escribe el nombre."
+    ></ion-input>
+
+    <!-- Apellido -->
+    <ion-input
+      mode="md"
+      fill="outline"
+      type="text"
+      label="Apellido"
+      labelPlacement="stacked"
+      placeholder="Apellido del colaborador"
+      autocomplete="family-name"
+      [formField]="formulario.strApellido"
+      [class.ion-invalid]="formulario.strApellido().invalid()"
+      [class.ion-touched]="formulario.strApellido().touched()"
+      errorText="Escribe el apellido."
+    ></ion-input>
+
+    <!-- Puesto -->
+    <div>
+      <ion-select
+        mode="md"
+        fill="outline"
+        label="Puesto"
+        labelPlacement="stacked"
+        placeholder="Selecciona un puesto"
+        [formField]="formulario.strPuesto"
+        [class.ion-invalid]="formulario.strPuesto().invalid()"
+        [class.ion-touched]="formulario.strPuesto().touched()"
+      >
+        @for (puesto of puestos; track puesto) {
+          <ion-select-option [value]="puesto">
+            {{ puesto }}
+          </ion-select-option>
+        }
+      </ion-select>
+
+      @if (
+        formulario.strPuesto().touched() &&
+        formulario.strPuesto().invalid()
+      ) {
+        <p class="mensaje error" role="alert">
+          Selecciona un puesto.
+        </p>
+      }
+    </div>
+
+    <!-- RFC -->
+    <ion-input
+      mode="md"
+      fill="outline"
+      type="text"
+      label="RFC"
+      labelPlacement="stacked"
+      placeholder="Ejemplo: GODE561231GR8"
+      autocapitalize="characters"
+      [formField]="formulario.strRfc"
+      [class.ion-invalid]="formulario.strRfc().invalid()"
+      [class.ion-touched]="formulario.strRfc().touched()"
+      errorText="Escribe un RFC con formato válido de 12 o 13 caracteres."
+    ></ion-input>
+
+    <!-- Sueldo -->
+    <ion-input
+      mode="md"
+      fill="outline"
+      type="number"
+      inputmode="decimal"
+      step="0.01"
+      label="Sueldo"
+      labelPlacement="stacked"
+      placeholder="Ejemplo: 12000.00"
+      [formField]="formulario.floatSueldo"
+      [class.ion-invalid]="formulario.floatSueldo().invalid()"
+      [class.ion-touched]="formulario.floatSueldo().touched()"
+      errorText="Ingresa un sueldo válido, mayor o igual a cero."
+    ></ion-input>
+
+    <!-- Error de la petición -->
+    @if (mensajeError()) {
+      <p class="mensaje error" role="alert">
+        {{ mensajeError() }}
+      </p>
+    }
+
+    <!-- Confirmación -->
+    @if (mensajeExito()) {
+      <p class="mensaje exito" role="status">
+        {{ mensajeExito() }}
+      </p>
+    }
+
+    <ion-button
+      expand="block"
+      type="submit"
+      [disabled]="formulario().submitting()"
+    >
+      {{ formulario().submitting() ? 'Guardando...' : 'Guardar' }}
+    </ion-button>
+  </form>
 </ion-content>
